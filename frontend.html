@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Shopify Coding Challenge/Front end</title>
+</head>
+  <style>
+  
+    body {
+      font-family: Helvetica;
+      background-color: #000639;
+    }
+    
+    div.margin {
+      padding-top: 2%;
+      margin:auto;
+      width: 50%;
+    }
+
+    .semi-square-input {
+      float: left;
+      width: 55%;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      overflow: hidden;
+      margin: auto;
+    }
+    
+    select{
+      color:#7B7B7B;
+    }
+
+    select.minimal {
+      float: right;
+      width: 43%;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      overflow: hidden;
+      margin: auto;
+  
+      /* from https://codepen.io/vulchivijay/pen/rxyBpg*/
+
+      background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+      background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+      background-repeat: no-repeat;
+      
+      margin: 0;      
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    
+    .semi-square-button {
+      width: 100%;
+      color: #FFFFFF;
+      background-color: #5c6ac4;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-color: #5c6ac4;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      overflow: hidden;
+    }
+    
+    .title-header-page {
+      font-size: 24px;
+      color: #FFFFFF;
+    }
+    
+    .header-2 {
+      font-size: 16px;
+      color: #FFFFFF;
+    }
+
+    a{
+      text-decoration:underline;
+      font-size:16px;
+      color:#FFFFFF;
+    }
+
+    .bottom{
+      position:fixed;
+      bottom:30px;
+      text-align:center;
+      width:100%;
+    }
+
+  </style>
+  
+  <script>
+  function foo(){
+    var err_msg="<br/><br/><br/>Please enter a valid email address";
+    var email = document.getElementsByName("your_email")[0].value;
+    if(email==""){
+      console.log(email);
+      document.getElementById("err").innerHTML = err_msg;
+      return false;
+    }
+    else if(email.includes('@')==false){
+       console.log(email);
+       document.getElementById("err").innerHTML = err_msg;
+       return false;
+    }
+  }
+  </script>
+  
+<body>
+
+  <div class="margin">
+    <div class="title-header-page">
+      <p style="font-weight:bold">Stay up to date with ecommerce trends with Shopify's newsletter<br/><span style="color:#7AB55C">__</span></p>
+    </div>
+      <div class="header-2">
+        <form action="" id="email_form">
+          <p>Subscribe for free marketing tips</p>
+          <input class="semi-square-input" type="text" name="your_email" placeholder="Email Address" width="48">
+          <select class="minimal" name="interests">
+            <option value="" disabled selected>Interested In...</option>
+            <option style="color:black" value="music">Music</option>
+            <option style="color:black" value="sports">Sports</option>
+            <option style="color:black" value="movies">Movies</option>
+            <option style="color:black" value="arts">Arts</option>
+            <option style="color:black" value="books">Books</option>
+          </select>
+        </form>
+        <p id="err" style="color:red;"></p>
+        <button class="semi-square-button" type="submit" form="email_form" value="submit" style="margin-top:10px;" onclick="return foo(this.form);">Sign up now</button>
+      </div>
+    </div>
+  <div class="bottom"><a href="#">Unsubscribe</a></div>
+
+</body>
+</html>
